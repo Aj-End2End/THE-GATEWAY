@@ -16,19 +16,24 @@ const images = [
 
 const data = [
   {
-    type: "3 BHK (City View)",
-    area: "1258.3",
-    price: "5.70 Cr",
+    type: "3 BHK (Sea View)",
+    area: "1262",
+    price: "6.25 Cr* ++",
+  },
+  {
+    type: "3 BHK (Sea View)",
+    area: "1445",
+    price: "8.00 Cr* ++",
   },
   {
     type: "4 BHK (Sea View)",
-    area: "1905.1",
-    price: "9.07 Cr",
+    area: "1980",
+    price: "10.70 Cr* ++",
   },
   {
     type: "4.5 BHK (Sea View)",
-    area: "2251.5",
-    price: "11.00 Cr",
+    area: "2251",
+    price: "11.60 Cr* ++",
   },
 ];
 
@@ -54,26 +59,32 @@ const aminitiesImages = [
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 1.jpg",
     label: "Swimming Pool",
+    alt: "the gateway swimming pool"
   },
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 2.jpg",
     label: "Kid's Play Area",
+    alt: "the gateway aminities"
   },
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 3.jpg",
     label: "Club House",
+    alt: "gateway clubhous"
   },
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 4.jpg",
     label: "Multipurpose Court",
+    alt: "getway project sport arena"
   },
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 5.jpg",
-    label: "Gymnasium",
+    label: "getway sewri gym",
+    alt: ""
   },
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 6.jpg",
     label: "Banquet Hall",
+    alt: "the gateway banquet hall"
   },
 ];
 
@@ -137,7 +148,6 @@ const BodyContent = () => {
     phone: Yup.string()
       .required("Phone is required")
       .matches(/^\d{10}$/, "Phone number must be 10 digits long"),
-    email: Yup.string().email("Invalid email address").optional(),
   });
 
   // Formik setup
@@ -145,19 +155,16 @@ const BodyContent = () => {
     initialValues: {
       name: "",
       phone: "",
-      email: "",
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       const formData = new FormData();
       formData.append("Name", values.name);
       formData.append("Phone", values.phone);
-      formData.append("Email", values.email);
 
       const crmData = {
         name: values.name,
         phone: values.phone,
-        email: values.email,
         listId: "65ddf42c7f23ee6edd9f556e", // Add your listId for CRM
         redirect: "", // Add your redirect URL for CRM
       };
@@ -185,7 +192,7 @@ const BodyContent = () => {
           }
         );
 
-        formik.resetForm({ name: "", phone: "", email: "" });
+        formik.resetForm({ name: "", phone: ""});
 
         // Redirect to thank-you page
         navigate("/thank-you");
@@ -200,11 +207,11 @@ const BodyContent = () => {
     <>
       <div>
         <div className="flex flex-col lg:flex-row " id="home">
-          <div className="relative w-full lg:w-[75%] h-1/2 lg:h-screen">
+          <div className="relative w-full sm:h-1/2 lg:w-[70%] lg:h-[calc(100vh-40px)] bg-black flex items-center justify-center overflow-hidden">
             <img
               src={images[currentIndex]}
-              alt="slider"
-              className="w-full h-full"
+              alt="best project in sewri"
+              className="w-full h-full object-cover"
             />
             <button
               className="absolute left-2 top-1/2 transform -translate-y-1/2 text-2xl text-white p-2 rounded-full"
@@ -212,7 +219,7 @@ const BodyContent = () => {
             >
               <img
                 src="images/LEFT_ARR-removebg-preview.png"
-                alt="Previous"
+                alt="project in south mumbai"
                 className="w-6 h-6" // Adjust the width and height to match the size of the ChevronLeft icon
               />
             </button>
@@ -222,12 +229,12 @@ const BodyContent = () => {
             >
               <img
                 src="images/RIGHT_ARR__2_-removebg-preview.png"
-                alt="Previous"
+                alt="projects in sewri"
                 className="w-6 h-6" // Adjust the width and height to match the size of the ChevronLeft icon
               />
             </button>
           </div>
-          <div className="w-full lg:w-[25%] h-auto lg:h-full bg-[#f7f5dd] p-2 my-4 flex flex-col items-center border-5 border-#4ca1af sm:border-5 lg:border-none">
+          <div className="w-full lg:w-[30%] h-auto lg:h-full bg-[#f7f5dd] p-2 my-4 flex flex-col items-center border-5 border-#4ca1af sm:border-5 lg:border-none">
             <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-center">
               L&T THE GATEWAY
               <br /> SEWRI
@@ -237,13 +244,13 @@ const BodyContent = () => {
                 Exclusive Elite Living
               </h2>
               <p className="text-sm sm:text-base lg:text-lg mt-2 mb-[7px] font-[700] border-4 border-#4ca1af text-[#eee4e4] bg-custom-gradient w-full">
-                3 Bed Homes: 5.70 Cr*++
+                3 Bed Homes: 6.25 Cr* ++
               </p>
               <p className="text-sm sm:text-base lg:text-lg mt-2 mb-[7px] font-[700] border-4 border-#4ca1af text-[#eee4e4] bg-custom-gradient w-full">
-                4 Bed Homes: 9.07 Cr*++
+                4 Bed Homes: 10.70 Cr* ++
               </p>
               <p className="text-sm sm:text-base lg:text-lg mt-2 mb-[7px] font-[700] border-4 border-#4ca1af text-[#eee4e4] bg-custom-gradient w-full">
-                4.5 Bed Homes: 11.00 Cr*++
+                4.5 Bed Homes: 11.60 Cr* ++
               </p>
             </div>
 
@@ -255,8 +262,8 @@ const BodyContent = () => {
             </button>
 
             <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-center">
-            L&T THE GATEWAY
-            <br /> SEWRI
+              L&T THE GATEWAY
+              <br /> SEWRI
             </h2>
 
             <button
@@ -270,37 +277,47 @@ const BodyContent = () => {
 
         <div className="bg-[#f7f5dd] w-full text-start" id="about">
           <div className="w-full max-w-7xl p-4 text-start">
-            <h1 className="my-4 text-2xl sm:text-4xl md:text-5xl lg:text-[48px] lg:font-bold font-semibold uppercase text-black-700 text-center">
+            <h1 className="my-4 text-2xl sm:text-4xl md:text-4xl lg:text-[42px] lg:font-bold font-semibold uppercase text-black-700 text-center">
               L&T THE GATEWAY
             </h1>
-            <h3 className="text-2xl font-bold mb-4">
-              Ultra Luxurious 3, 4 & 4.5 Bed Homes @ 5.70 Cr Onwards.
+            <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">
+              Ultra Luxurious 3, 4 & 4.5 Bed Homes @ 6.25 Cr* Onwards.
             </h3>
-            <b>L&T THE GATEWAY, SEWRI</b> creates landmarks that meet global
-            standards, eptomise our values and are built on legacy of trust.
-            Setting the stage for your arrival, experience boundless treats,
-            fasinating views and a holistic lifestyle in everyday living. Be a
-            part of the premium throughtfully planned residences that elevates
-            the daily lifestyle.
+            <p className="text-gray-900 sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 sm:mb-6 text-justify">
+              Experience <b>L&T The Gateway </b>— a premium twin tower
+              architectural marvel offering{" "}
+              <b>3, 4 & 4.5 BHK super spacious homes </b> in the heart of South
+              Mumbai. Enjoy breathtaking panoramic Sea View and Atal Setu View
+              from your private deck. Nestled in a prime location with
+              unparalleled access to the Eastern Freeway and upcoming
+              infrastructure, this gated community elevates luxury living with
+              40 plus lavish amenities, including a swimming pool and state of
+              the art fitness facilities. Secure your refined lifestyle in a
+              development that embodies L&T legacy of architectural excellence
+              and high quality construction.
+            </p>
+
             <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mt-6 mb-4">
               Project Highlights
             </h2>
             <ul className="list-disc pl-5 text-black sm:text-black md:text-lg lg:text-lg xl:text-xl ">
               <li className="mb-1">Sea Facing Apartments.</li>
-              <li className="mb-1">Vastu Compliant.</li>
-              <li className="mb-1">Sky Club - 220 Mtrs above Sea Level.</li>
-              <li className="mb-1">Low Density Project.</li>
-              <li className="mb-1">Jain Derasar.</li>
               <li className="mb-1">
-                Close Proximity - Atal Setu & Eastern Freeway
+                Ultra Luxe 3,,4 & 4.5 Bed Residences starting at 6.25 Cr*
               </li>
+              <li className="mb-1">5 mins from Indias Longest Sea bridge.</li>
+              <li className="mb-1">Low Density Project.</li>
+              <li className="mb-1">
+                A Grand Clubhouse on the 62nd & 63rd floors.
+              </li>
+              <li className="mb-1">Air Conditioned Apartments.</li>
             </ul>
           </div>
         </div>
 
         <div className="price-overview justify-center" id="price-overview">
           <div className="border-[20px] border-solid border-[#4ca1af] bg-[#f7f5dd] pb-3 sm:border-[20px] md:border-[15px] lg:border-[20px]">
-            <h1 className="text-center my-4 text-2xl sm:text-4xl md:text-5xl lg:text-[48px] lg:font-bold font-semibold uppercase text-black-800">
+            <h1 className="text-center my-4 text-2xl sm:text-4xl md:text-4xl lg:text-[42px] lg:font-bold font-semibold uppercase text-black-800">
               PRICE OVERVIEW
             </h1>
             <table className="table border-1 border-black w-full">
@@ -339,7 +356,7 @@ const BodyContent = () => {
               <div className="gallery-item group" key={index}>
                 <img
                   src={src}
-                  alt={`Gallery ${index + 1}`}
+                  alt="sea view properties in mumbai"
                   className="w-full h-[300px] object-cover transition-all duration-100 ease-out group-hover:scale-104 group-hover:filter-none"
                 />
               </div>
@@ -357,7 +374,7 @@ const BodyContent = () => {
                 <img
                   className="w-full h-48 object-cover"
                   src={item.src}
-                  alt={`Aminities ${index + 1}`}
+                  alt={item.alt}
                 />
                 <h2
                   className="text-center m-2"
@@ -377,10 +394,23 @@ const BodyContent = () => {
             </h1>
             <div className="video-gallery w-full mx-auto px-4 flex justify-center items-center">
               <div className="gallery-item w-full">
-                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, margin: '0 auto' }}>
+                <div
+                  style={{
+                    position: "relative",
+                    paddingBottom: "56.25%",
+                    height: 0,
+                    margin: "0 auto",
+                  }}
+                >
                   <iframe
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                    src="https://www.youtube.com/embed/grC8b9Dn5HM?rel=0"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    src="https://www.youtube.com/embed/7-KU9MbhFrw?rel=0"
                     title="The Gateway Tour"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
@@ -405,7 +435,7 @@ const BodyContent = () => {
                 <div className="slider__slide active">
                   <img
                     src={floorImages[floor]}
-                    alt="slider"
+                    alt="the gateway floor plans"
                     className="slider-image"
                   />
                 </div>
@@ -537,24 +567,6 @@ const BodyContent = () => {
                   )}
                 </div>
 
-                <div className="form-group">
-                  <input
-                    className="form-control w-full px-4 py-2 text-sm sm:text-base md:text-lg border rounded-md"
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your Email ID"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.email && formik.errors.email && (
-                    <span className="text-red-500 text-sm">
-                      {formik.errors.email}
-                    </span>
-                  )}
-                </div>
-
                 <button
                   className="glow-on-hover w-full py-auto px-4 text-white rounded-md text-xs sm:text-sm md:text-lg lg:text-xl"
                   type="submit"
@@ -611,7 +623,7 @@ const BodyContent = () => {
             <img
               className="qr-logo w-full sm:w-26 md:w-39 mb-4"
               src="images/qr.webp"
-              alt="QR-logo 1"
+              alt="gateway rera"
             />
           </div>
         </div>
@@ -631,7 +643,7 @@ const BodyContent = () => {
         </div>
 
         <a
-          href="https://api.whatsapp.com/send?phone=9326959938&text=I am interested in LnT THE GATEWAY, SEWRI project and want more information about this project."
+          href="https://api.whatsapp.com/send?phone=9326959938&text=I am interested in LnT The Gateway, Sewri project and want more information about this project."
           className="floating-button"
           target="_blank"
           rel="noreferrer"

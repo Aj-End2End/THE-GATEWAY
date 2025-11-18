@@ -35,7 +35,7 @@ const NavBar = () => {
               onClick={() => (window.location.href = "/")}
             />
 
-            <h2 className="text-xl font-bold text-sm md:text-lg lg:text-2xl">
+            <h2 className="text-xl font-bold md:text-lg lg:text-2xl">
               L&T THE GATEWAY, SEWRI
             </h2>
           </Link>
@@ -45,7 +45,6 @@ const NavBar = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                smooth
                 to={item.path}
                 className="text-gray-600 hover:underline hover:text-black transition duration-200 text-sm md:text-xs lg:text-sm pb-1"
               >

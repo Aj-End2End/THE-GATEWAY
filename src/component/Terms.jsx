@@ -63,7 +63,7 @@ const Terms = () => {
         </ul>
       </div>
 
-      <footer classname="foot_sec">
+      <footer className="foot_sec">
         <div className="foot_top bg-gray-800 text-white py-8 text-center">
           <div className="container mx-auto px-4">
             <div className="row">
@@ -109,9 +109,9 @@ const Terms = () => {
       </footer>
 
       <a
-        href="https://api.whatsapp.com/send?phone=9326959938&text=I am interested in LnT THE GATEWAY, SEWRI project and want more information about this project."
+        href="https://api.whatsapp.com/send?phone=9326959938&text=I am interested in LnT The Gateway, Sewri project and want more information about this project."
         className="floating-button"
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         <div className="floating-btn">
           <FaWhatsapp size={30} />

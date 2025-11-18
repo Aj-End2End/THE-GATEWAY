@@ -254,7 +254,7 @@ const Chatbot = () => {
         "Hey, I am Shrikant Koli ! Welcome to The Gateway Project."
       );
     }
-  }, [isOpen]);
+  }, [isOpen, messages.length]);
 
   // Add this with other state declarations
   const messagesEndRef = React.useRef(null);
@@ -283,7 +283,7 @@ const Chatbot = () => {
               <textPath
                 href="#curve"
                 startOffset="50%"
-                text-anchor="middle"
+                textAnchor="middle"
                 side="left"
               >
                   We Are Here 🤚

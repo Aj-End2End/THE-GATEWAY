@@ -14,7 +14,6 @@ const FormModal = (props) => {
     phone: Yup.string()
       .required("Phone is required")
       .matches(/^\d{10}$/, "Phone number must be 10 digits long"),
-    email: Yup.string().email("Invalid email address").optional(),
   });
 
   // Formik setup
@@ -22,19 +21,16 @@ const FormModal = (props) => {
     initialValues: {
       name: "",
       phone: "",
-      email: "",
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
       const formData = new FormData();
       formData.append("Name", values.name);
       formData.append("Phone", values.phone);
-      formData.append("Email", values.email);
 
       const crmData = {
         name: values.name,
         phone: values.phone,
-        email: values.email,
         listId: "65ddf42c7f23ee6edd9f556e", // Add your listId for CRM
         redirect: "", // Add your redirect URL for CRM
       };
@@ -67,12 +63,12 @@ const FormModal = (props) => {
           console.log("Data sent successfully to both Google Sheets and CRM.");
 
           // Reset form and close modal
-          formik.resetForm({ name: "", phone: "", email: "" });
+          formik.resetForm({ name: "", phone: ""});
           props.onClose();
           navigate("/thank-you");
         } else {
           setIsSubmitted(false);
-          formik.resetForm({ name: "", phone: "", email: "" });
+          formik.resetForm({ name: "", phone: ""});
           props.onClose();
           console.error("Failed to send data to one or both destinations.");
         }
@@ -198,29 +194,6 @@ const FormModal = (props) => {
                       {formik.touched.phone && formik.errors.phone && (
                         <span className="text-red-500 text-sm">
                           {formik.errors.phone}
-                        </span>
-                      )}
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label
-                        className="text-lg text-start font-medium text-gray-600"
-                        htmlFor="inputEmail"
-                      >
-                        Email
-                      </label>
-                      <input
-                        id="inputEmail"
-                        className="border-b border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
-                        type="email"
-                        name="email"
-                        value={formik.values.email}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                      />
-                      {formik.touched.email && formik.errors.email && (
-                        <span className="text-red-500 text-sm">
-                          {formik.errors.email}
                         </span>
                       )}
                     </div>
