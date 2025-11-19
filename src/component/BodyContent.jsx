@@ -78,8 +78,8 @@ const aminitiesImages = [
   },
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 5.jpg",
-    label: "getway sewri gym",
-    alt: ""
+    label: "Gymnasium",
+    alt: "getway sewri gym"
   },
   {
     src: "images/AMENITIES/THE GATEWAY - AMENITIES 6.jpg",
@@ -303,12 +303,12 @@ const BodyContent = () => {
             <ul className="list-disc pl-5 text-black sm:text-black md:text-lg lg:text-lg xl:text-xl ">
               <li className="mb-1">Sea Facing Apartments.</li>
               <li className="mb-1">
-                Ultra Luxe 3,,4 & 4.5 Bed Residences starting at 6.25 Cr*
+                Ultra Luxe 3, 4 & 4.5 Bed Residences starting at 6.25 Cr*
               </li>
-              <li className="mb-1">5 mins from Indias Longest Sea bridge.</li>
+              <li className="mb-1">5 Mins from India's Longest Sea bridge.</li>
               <li className="mb-1">Low Density Project.</li>
               <li className="mb-1">
-                A Grand Clubhouse on the 62nd & 63rd floors.
+                Grand Clubhouse on the 62<sup>nd</sup> & 63<sup>rd</sup> floor.
               </li>
               <li className="mb-1">Air Conditioned Apartments.</li>
             </ul>
