@@ -207,11 +207,11 @@ const BodyContent = () => {
     <>
       <div>
         <div className="flex flex-col lg:flex-row " id="home">
-          <div className="relative w-full sm:h-1/2 lg:w-[70%] lg:h-[calc(100vh-40px)] bg-black flex items-center justify-center overflow-hidden">
+          <div className="relative w-full sm:h-1/2 lg:w-[70%] lg:h-100vh bg-black flex items-center justify-center overflow-hidden">
             <img
               src={images[currentIndex]}
               alt="best project in sewri"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
             <button
               className="absolute left-2 top-1/2 transform -translate-y-1/2 text-2xl text-white p-2 rounded-full"
