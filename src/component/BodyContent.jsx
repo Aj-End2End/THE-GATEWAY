@@ -16,24 +16,19 @@ const images = [
 
 const data = [
   {
-    type: "3 BHK (Sea View)",
-    area: "1262",
-    price: "6.25 Cr* ++",
-  },
-  {
-    type: "3 BHK (Sea View)",
-    area: "1445",
-    price: "8.00 Cr* ++",
+    type: "4 BHK Optima (Sea View)",
+    area: "1788",
+    price: "11.60 Cr",
   },
   {
     type: "4 BHK (Sea View)",
     area: "1980",
-    price: "10.70 Cr* ++",
+    price: "12.00 Cr",
   },
   {
     type: "4.5 BHK (Sea View)",
     area: "2251",
-    price: "11.60 Cr* ++",
+    price: "13.00 Cr",
   },
 ];
 
@@ -49,8 +44,6 @@ const galleryImages = [
 ];
 
 const floorImages = [
-  "images/FLOOR PLANS/4.jpg",
-  "images/FLOOR PLANS/2.jpg",
   "images/FLOOR PLANS/3.jpg",
   "images/FLOOR PLANS/1.jpg",
 ];
@@ -244,13 +237,10 @@ const BodyContent = () => {
                 Exclusive Elite Living
               </h2>
               <p className="text-sm sm:text-base lg:text-lg mt-2 mb-[7px] font-[700] border-4 border-#4ca1af text-[#eee4e4] bg-custom-gradient w-full">
-                3 Bed Homes: 6.25 Cr* ++
+                4 Bed Homes: 11.60 Cr* ++
               </p>
               <p className="text-sm sm:text-base lg:text-lg mt-2 mb-[7px] font-[700] border-4 border-#4ca1af text-[#eee4e4] bg-custom-gradient w-full">
-                4 Bed Homes: 10.70 Cr* ++
-              </p>
-              <p className="text-sm sm:text-base lg:text-lg mt-2 mb-[7px] font-[700] border-4 border-#4ca1af text-[#eee4e4] bg-custom-gradient w-full">
-                4.5 Bed Homes: 11.60 Cr* ++
+                4.5 Bed Homes: 13.00 Cr* ++
               </p>
             </div>
 
@@ -281,12 +271,12 @@ const BodyContent = () => {
               L&T THE GATEWAY
             </h1>
             <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">
-              Ultra Luxurious 3, 4 & 4.5 Bed Homes @ 6.25 Cr* Onwards.
+              Ultra Luxurious 4 & 4.5 Bed Homes @ 11.60 Cr* Onwards.
             </h3>
             <p className="text-gray-900 sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 sm:mb-6 text-justify">
               Experience <b>L&T The Gateway </b>— a premium twin tower
               architectural marvel offering{" "}
-              <b>3, 4 & 4.5 BHK super spacious homes </b> in the heart of South
+              <b>4 & 4.5 BHK super spacious homes </b> in the heart of South
               Mumbai. Enjoy breathtaking panoramic Sea View and Atal Setu View
               from your private deck. Nestled in a prime location with
               unparalleled access to the Eastern Freeway and upcoming
@@ -303,7 +293,7 @@ const BodyContent = () => {
             <ul className="list-disc pl-5 text-black sm:text-black md:text-lg lg:text-lg xl:text-xl ">
               <li className="mb-1">Sea Facing Apartments.</li>
               <li className="mb-1">
-                Ultra Luxe 3, 4 & 4.5 Bed Residences starting at 6.25 Cr*
+                Ultra Luxe 4 & 4.5 Bed Residences starting at 11.60 Cr*
               </li>
               <li className="mb-1">5 Mins from India's Longest Sea bridge.</li>
               <li className="mb-1">Low Density Project.</li>
@@ -387,7 +377,7 @@ const BodyContent = () => {
           </div>
         </div>
 
-        <section id="virtual-tour">
+        {/* <section id="virtual-tour">
           <div className="content max-w-7xl mx-auto mt-12">
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-[42px] font-bold text-center my-6 transition-all duration-300">
               VIRTUAL TOUR
@@ -420,7 +410,7 @@ const BodyContent = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section id="floor-plan">
           <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-[42px] font-bold text-center my-8 transition-all duration-300">

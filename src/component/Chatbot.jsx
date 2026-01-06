@@ -99,7 +99,7 @@ const Chatbot = () => {
     "Get a call back",
   ];
 
-  const configurations = ["3 BHK", "4 BHK", "4.5 BHK"];
+  const configurations = ["4 BHK", "4.5 BHK"];
 
   const addMessage = (text, isUser = false) => {
     setMessages((prev) => [...prev, { text, isUser }]);
